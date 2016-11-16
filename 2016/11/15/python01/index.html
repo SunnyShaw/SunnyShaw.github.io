@@ -1,0 +1,695 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="后端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#1.1环境搭建
+##安装
+###Window 平台安装 Python:
+打开WEB浏览器访问http://www.python.org/download/在下载列表中选择Window平台安装包，包格式为：python-XYZ.msi 文件 ， XYZ 为你要安装的版本号。要使用安装程序 python-XYZ.msi, Windows系统必须支持Microsoft Installer 2.0搭配使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python环境搭建与基础知识">
+<meta property="og:url" content="http://yoursite.com/2016/11/15/python01/index.html">
+<meta property="og:site_name" content="Sunny Shaw">
+<meta property="og:description" content="#1.1环境搭建
+##安装
+###Window 平台安装 Python:
+打开WEB浏览器访问http://www.python.org/download/在下载列表中选择Window平台安装包，包格式为：python-XYZ.msi 文件 ， XYZ 为你要安装的版本号。要使用安装程序 python-XYZ.msi, Windows系统必须支持Microsoft Installer 2.0搭配使">
+<meta property="og:updated_time" content="2016-11-16T15:38:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python环境搭建与基础知识">
+<meta name="twitter:description" content="#1.1环境搭建
+##安装
+###Window 平台安装 Python:
+打开WEB浏览器访问http://www.python.org/download/在下载列表中选择Window平台安装包，包格式为：python-XYZ.msi 文件 ， XYZ 为你要安装的版本号。要使用安装程序 python-XYZ.msi, Windows系统必须支持Microsoft Installer 2.0搭配使">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/15/python01/"/>
+
+  <title> python环境搭建与基础知识 | Sunny Shaw </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?77ecd9f6ef14aedbc6b3e1378b29a310";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunny Shaw</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不辜负这个伟大的时代。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                python环境搭建与基础知识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-15T17:54:28+08:00" content="2016-11-15">
+              2016-11-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/15/python01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/15/python01/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#1.1环境搭建</p>
+<p>##安装</p>
+<p>###Window 平台安装 Python:</p>
+<p>打开WEB浏览器访问<a href="http://www.python.org/download/" target="_blank" rel="external">http://www.python.org/download/</a><br>在下载列表中选择Window平台安装包，包格式为：python-XYZ.msi 文件 ， XYZ 为你要安装的版本号。<br>要使用安装程序 python-XYZ.msi, Windows系统必须支持Microsoft Installer 2.0搭配使用。只要保存安装文件到本地计算机，然后运行它，看看你的机器支持MSI。<br>下载后，双击下载包，进入Python安装向导，安装非常简单，你只需要使用默认的设置一直点击”下一步”直到安装完成即可。</p>
+<p>###MAC 平台安装 Python:<br>最近的Macs系统都自带有Python环境，你也可以在链接 <a href="http://www.python.org/download/" target="_blank" rel="external">http://www.python.org/download/</a> 上下载最新版安装。</p>
+<p>##设置环境变量<br>在 Windows 设置环境变量<br>在环境变量中添加Python目录：<br>在命令提示框中(cmd) : 输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">path=%path%;C:\Python</div></pre></td></tr></table></figure></p>
+<p>按下”Enter”。</p>
+<p>注意: C:\Python 是Python的安装目录。<br>也可以通过以下方式设置：<br>右键点击”计算机”，然后点击”属性”<br>然后点击”高级系统设置”<br>选择”系统变量”窗口下面的”Path”,双击即可！<br>然后在”Path”行，添加python安装路径即可(我的D:\Python32)，所以在后面，添加该路径即可。 ps：记住，路径直接用分号”；”隔开！<br>最后设置成功以后，在cmd命令行，输入命令”python”，就可以有相关显示。</p>
+<p>###Hello World!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"></div><div class="line">print &quot;你好，世界&quot;;</div></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你好，世界</div></pre></td></tr></table></figure></p>
+<p>##1.2基础语法</p>
+<blockquote>
+<p>交互式编程<br>脚本式编程</p>
+</blockquote>
+<p>##1.3标识符</p>
+<ul>
+<li>在python里，标识符有字母、数字、下划线组成。</li>
+<li>在python中，所有标识符可以包括英文、数字以及下划线（_），但不能以数字开头。</li>
+<li>python中的标识符是区分大小写的。</li>
+<li>以下划线开头的标识符是有特殊意义的。以单下划线开头（_foo）的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用”from xxx import *”而导入；</li>
+<li>以双下划线开头的（<strong>foo）代表类的私有成员；以双下划线开头和结尾的（</strong>foo<strong>）代表python里特殊方法专用的标识，如</strong>init__（）代表类的构造函数。<br>##1.4行和缩进</li>
+</ul>
+<p>学习Python与其他语言最大的区别就是，Python的代码块不使用大括号（{}）来控制类，函数以及其他逻辑判断。python最具特色的就是用缩进来写模块。<br>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
+<p>##1.5多行语句</p>
+<p>Python语句中一般以新行作为为语句的结束符。<br>但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">total = item_one + \</div><div class="line">        item_two + \</div><div class="line">        item_three</div></pre></td></tr></table></figure></p>
+<p>语句中包含[], {} 或 () 括号就不需要使用多行连接符。如下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">days = [&apos;Monday&apos;, &apos;Tuesday&apos;, &apos;Wednesday&apos;,</div><div class="line">        &apos;Thursday&apos;, &apos;Friday&apos;]</div></pre></td></tr></table></figure></p>
+<p>##1.6Python 引号<br>Python 接收单引号(‘ )，双引号(“ )，三引号(‘’’ “””) 来表示字符串，引号的开始与结束必须的相同类型的。<br>其中三引号可以由多行组成，编写多行文本的快捷语法，常用语文档字符串，在文件的特定地点，被当做注释。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">word = &apos;word&apos;</div><div class="line">sentence = &quot;这是一个句子。&quot;</div><div class="line">paragraph = &quot;&quot;&quot;这是一个段落。</div><div class="line">包含了多个语句&quot;&quot;&quot;</div></pre></td></tr></table></figure></p>
+<p>##1.7Python注释<br>python中单行注释采用 # 开头。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"># 文件名：test.py</div><div class="line"></div><div class="line"># 第一个注释</div><div class="line">print &quot;Hello, Python!&quot;;  # 第二个注释</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello, Python!</div></pre></td></tr></table></figure></p>
+<p>注释可以在语句或表达式行末：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name = &quot;Madisetti&quot; # 这是一个注释</div></pre></td></tr></table></figure></p>
+<p>python 中多行注释使用三个单引号(‘’’)或三个双引号(“””)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"># 文件名：test.py</div><div class="line"></div><div class="line"></div><div class="line">&apos;&apos;&apos;</div><div class="line">这是多行注释，使用单引号。</div><div class="line">这是多行注释，使用单引号。</div><div class="line">这是多行注释，使用单引号。</div><div class="line">&apos;&apos;&apos;</div><div class="line"></div><div class="line">&quot;&quot;&quot;</div><div class="line">这是多行注释，使用双引号。</div><div class="line">这是多行注释，使用双引号。</div><div class="line">这是多行注释，使用双引号。</div><div class="line">&quot;&quot;&quot;</div></pre></td></tr></table></figure></p>
+<p>##1.8Python空行<br>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。<br>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<ul>
+<li>记住：空行也是程序代码的一部分。<br>##1.9等待用户输入<br>下面的程序在按回车键后就会等待用户输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"></div><div class="line">raw_input(&quot;\n\nPress the enter key to exit.&quot;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上代码中 ，”\n\n”在结果输出前会输出两个新的空行。一旦用户按下键时，程序将退出。</p>
+<p>##1.10同一行显示多条语句<br>Python可以在同一行中使用多条语句，语句之间使用分号;分割，以下是一个简单的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"></div><div class="line">import sys; x = &apos;runoob&apos;; sys.stdout.write(x + &apos;\n&apos;)</div></pre></td></tr></table></figure></p>
+<p>执行以上代码，输入结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ python test.py</div><div class="line">runoob</div></pre></td></tr></table></figure></p>
+<p>##1.11多个语句构成代码组<br>缩进相同的一组语句构成一个代码块，我们称之代码组。<br>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。<br>我们将首行及后面的代码组称为一个子句(clause)。<br>如下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if expression : </div><div class="line">   suite </div><div class="line">elif expression :  </div><div class="line">   suite  </div><div class="line">else :  </div><div class="line">   suite</div></pre></td></tr></table></figure></p>
+<p>##1.12命令行参数<br>很多程序可以执行一些操作来查看一些基本信，Python可以使用-h参数查看各参数帮助信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ python -h </div><div class="line">usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ... </div><div class="line">Options and arguments (and corresponding environment variables): </div><div class="line">-c cmd : program passed in as string (terminates option list) </div><div class="line">-d     : debug output from parser (also PYTHONDEBUG=x) </div><div class="line">-E     : ignore environment variables (such as PYTHONPATH) </div><div class="line">-h     : print this help message and exit </div><div class="line"> </div><div class="line">[ etc. ]</div></pre></td></tr></table></figure></p>
+<p>我们在使用脚本形式执行 Python 时，可以接收命令行输入的参数，具体使用可以参照 Python 命令行参数。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/后端/" rel="tag">#后端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/25/jsm基础/" rel="next" title="jsm">
+                <i class="fa fa-chevron-left"></i> jsm
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/16/python02/" rel="prev" title="python变量类型">
+                python变量类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/15/python01/"
+           data-title="python环境搭建与基础知识" data-url="http://yoursite.com/2016/11/15/python01/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/headerPic.png"
+               alt="Sunny Shaw" />
+          <p class="site-author-name" itemprop="name">Sunny Shaw</p>
+          <p class="site-description motion-element" itemprop="description">Sunny,Shaw,blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SunnyShaw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunny Shaw</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunnyshaw"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
