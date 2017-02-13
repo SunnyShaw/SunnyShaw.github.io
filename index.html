@@ -268,257 +268,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/16/python02/" itemprop="url">
-                  python变量类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-16T17:54:28+08:00" content="2016-11-16">
-              2016-11-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/16/python02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/python02/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>##2.1变量类型</p>
-<p>###标准数据类型<br>Python有五个标准的数据类型：<br>Numbers（数字）<br>String（字符串）<br>List（列表）<br>Tuple（元组）<br>Dictionary（字典）</p>
-<p>####Python数字<br>数字数据类型用于存储数值。<br>他们是不可改变的数据类型，这意味着改变数字数据类型会分配一个新的对象。<br>当你指定一个值时，Number对象就会被创建：<br>Python支持四种不同的数字类型：<br>int（有符号整型）<br>long（长整型[也可以代表八进制和十六进制]）<br>float（浮点型）<br>complex（复数）</p>
-<p>###Python字符串<br>字符串或串(String)是由数字、字母、下划线组成的一串字符。<br>python的字串列表有2种取值顺序:<br>从左到右索引默认0开始的，最大范围是字符串长度少1<br>从右到左索引默认-1开始的，最大范围是字符串开头</p>
-<p>###Python列表<br>List（列表） 是 Python 中使用最频繁的数据类型。<br>列表可以完成大多数集合类的数据结构实现。它支持字符，数字，字符串甚至可以包含列表（所谓嵌套）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"> </div><div class="line">list = [ &apos;runoob&apos;, 786 , 2.23, &apos;john&apos;, 70.2 ]</div><div class="line">tinylist = [123, &apos;john&apos;]</div><div class="line"> </div><div class="line">print list               # 输出完整列表</div><div class="line">print list[0]            # 输出列表的第一个元素</div><div class="line">print list[1:3]          # 输出第二个至第三个的元素 </div><div class="line">print list[2:]           # 输出从第三个开始至列表末尾的所有元素</div><div class="line">print tinylist * 2       # 输出列表两次</div><div class="line">print list + tinylist    # 打印组合的列表</div></pre></td></tr></table></figure></p>
-<p>结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2]</div><div class="line">runoob</div><div class="line">[786, 2.23]</div><div class="line">[2.23, &apos;john&apos;, 70.2]</div><div class="line">[123, &apos;john&apos;, 123, &apos;john&apos;]</div><div class="line">[&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2, 123, &apos;john&apos;]</div></pre></td></tr></table></figure></p>
-<p>###Python元组<br>元组是另一个数据类型，类似于List（列表）。<br>元组用”()”标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。<br>以下是元组无效的，因为元组是不允许更新的。而列表是允许更新的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"> </div><div class="line">tuple = ( &apos;runoob&apos;, 786 , 2.23, &apos;john&apos;, 70.2 )</div><div class="line">list = [ &apos;runoob&apos;, 786 , 2.23, &apos;john&apos;, 70.2 ]</div><div class="line">tuple[2] = 1000    # 元组中是非法应用</div><div class="line">list[2] = 1000     # 列表中是合法应用</div></pre></td></tr></table></figure></p>
-<p>###Python元字典<br>字典(dictionary)是除列表以外python之中最灵活的内置数据结构类型。列表是有序的对象结合，字典是无序的对象集合。<br>两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。<br>字典用”{ }”标识。字典由索引(key)和它对应的值value组成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"> </div><div class="line">dict = &#123;&#125;</div><div class="line">dict[&apos;one&apos;] = &quot;This is one&quot;</div><div class="line">dict[2] = &quot;This is two&quot;</div><div class="line"> </div><div class="line">tinydict = &#123;&apos;name&apos;: &apos;john&apos;,&apos;code&apos;:6734, &apos;dept&apos;: &apos;sales&apos;&#125;</div><div class="line"> </div><div class="line"> </div><div class="line">print dict[&apos;one&apos;]          # 输出键为&apos;one&apos; 的值</div><div class="line">print dict[2]              # 输出键为 2 的值</div><div class="line">print tinydict             # 输出完整的字典</div><div class="line">print tinydict.keys()      # 输出所有键</div><div class="line">print tinydict.values()    # 输出所有值</div></pre></td></tr></table></figure></p>
-<p>结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">This is one</div><div class="line">This is two</div><div class="line">&#123;&apos;dept&apos;: &apos;sales&apos;, &apos;code&apos;: 6734, &apos;name&apos;: &apos;john&apos;&#125;</div><div class="line">[&apos;dept&apos;, &apos;code&apos;, &apos;name&apos;]</div><div class="line">[&apos;sales&apos;, 6734, &apos;john&apos;]</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/15/python01/" itemprop="url">
-                  python环境搭建与基础知识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T17:54:28+08:00" content="2016-11-15">
-              2016-11-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/15/python01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/15/python01/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#1.1环境搭建</p>
-<p>##安装</p>
-<p>###Window 平台安装 Python:</p>
-<p>打开WEB浏览器访问<a href="http://www.python.org/download/" target="_blank" rel="external">http://www.python.org/download/</a><br>在下载列表中选择Window平台安装包，包格式为：python-XYZ.msi 文件 ， XYZ 为你要安装的版本号。<br>要使用安装程序 python-XYZ.msi, Windows系统必须支持Microsoft Installer 2.0搭配使用。只要保存安装文件到本地计算机，然后运行它，看看你的机器支持MSI。<br>下载后，双击下载包，进入Python安装向导，安装非常简单，你只需要使用默认的设置一直点击”下一步”直到安装完成即可。</p>
-<p>###MAC 平台安装 Python:<br>最近的Macs系统都自带有Python环境，你也可以在链接 <a href="http://www.python.org/download/" target="_blank" rel="external">http://www.python.org/download/</a> 上下载最新版安装。</p>
-<p>##设置环境变量<br>在 Windows 设置环境变量<br>在环境变量中添加Python目录：<br>在命令提示框中(cmd) : 输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">path=%path%;C:\Python</div></pre></td></tr></table></figure></p>
-<p>按下”Enter”。</p>
-<p>注意: C:\Python 是Python的安装目录。<br>也可以通过以下方式设置：<br>右键点击”计算机”，然后点击”属性”<br>然后点击”高级系统设置”<br>选择”系统变量”窗口下面的”Path”,双击即可！<br>然后在”Path”行，添加python安装路径即可(我的D:\Python32)，所以在后面，添加该路径即可。 ps：记住，路径直接用分号”；”隔开！<br>最后设置成功以后，在cmd命令行，输入命令”python”，就可以有相关显示。</p>
-<p>###Hello World!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"></div><div class="line">print &quot;你好，世界&quot;;</div></pre></td></tr></table></figure></p>
-<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你好，世界</div></pre></td></tr></table></figure></p>
-<p>##1.2基础语法</p>
-<blockquote>
-<p>交互式编程<br>脚本式编程</p>
-</blockquote>
-<p>##1.3标识符</p>
-<ul>
-<li>在python里，标识符有字母、数字、下划线组成。</li>
-<li>在python中，所有标识符可以包括英文、数字以及下划线（_），但不能以数字开头。</li>
-<li>python中的标识符是区分大小写的。</li>
-<li>以下划线开头的标识符是有特殊意义的。以单下划线开头（_foo）的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用”from xxx import *”而导入；</li>
-<li>以双下划线开头的（<strong>foo）代表类的私有成员；以双下划线开头和结尾的（</strong>foo<strong>）代表python里特殊方法专用的标识，如</strong>init__（）代表类的构造函数。<br>##1.4行和缩进</li>
-</ul>
-<p>学习Python与其他语言最大的区别就是，Python的代码块不使用大括号（{}）来控制类，函数以及其他逻辑判断。python最具特色的就是用缩进来写模块。<br>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行。</p>
-<p>##1.5多行语句</p>
-<p>Python语句中一般以新行作为为语句的结束符。<br>但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">total = item_one + \</div><div class="line">        item_two + \</div><div class="line">        item_three</div></pre></td></tr></table></figure></p>
-<p>语句中包含[], {} 或 () 括号就不需要使用多行连接符。如下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">days = [&apos;Monday&apos;, &apos;Tuesday&apos;, &apos;Wednesday&apos;,</div><div class="line">        &apos;Thursday&apos;, &apos;Friday&apos;]</div></pre></td></tr></table></figure></p>
-<p>##1.6Python 引号<br>Python 接收单引号(‘ )，双引号(“ )，三引号(‘’’ “””) 来表示字符串，引号的开始与结束必须的相同类型的。<br>其中三引号可以由多行组成，编写多行文本的快捷语法，常用语文档字符串，在文件的特定地点，被当做注释。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">word = &apos;word&apos;</div><div class="line">sentence = &quot;这是一个句子。&quot;</div><div class="line">paragraph = &quot;&quot;&quot;这是一个段落。</div><div class="line">包含了多个语句&quot;&quot;&quot;</div></pre></td></tr></table></figure></p>
-<p>##1.7Python注释<br>python中单行注释采用 # 开头。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"># 文件名：test.py</div><div class="line"></div><div class="line"># 第一个注释</div><div class="line">print &quot;Hello, Python!&quot;;  # 第二个注释</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello, Python!</div></pre></td></tr></table></figure></p>
-<p>注释可以在语句或表达式行末：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name = &quot;Madisetti&quot; # 这是一个注释</div></pre></td></tr></table></figure></p>
-<p>python 中多行注释使用三个单引号(‘’’)或三个双引号(“””)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line"># 文件名：test.py</div><div class="line"></div><div class="line"></div><div class="line">&apos;&apos;&apos;</div><div class="line">这是多行注释，使用单引号。</div><div class="line">这是多行注释，使用单引号。</div><div class="line">这是多行注释，使用单引号。</div><div class="line">&apos;&apos;&apos;</div><div class="line"></div><div class="line">&quot;&quot;&quot;</div><div class="line">这是多行注释，使用双引号。</div><div class="line">这是多行注释，使用双引号。</div><div class="line">这是多行注释，使用双引号。</div><div class="line">&quot;&quot;&quot;</div></pre></td></tr></table></figure></p>
-<p>##1.8Python空行<br>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。<br>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
-<ul>
-<li>记住：空行也是程序代码的一部分。<br>##1.9等待用户输入<br>下面的程序在按回车键后就会等待用户输入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"></div><div class="line">raw_input(&quot;\n\nPress the enter key to exit.&quot;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>以上代码中 ，”\n\n”在结果输出前会输出两个新的空行。一旦用户按下键时，程序将退出。</p>
-<p>##1.10同一行显示多条语句<br>Python可以在同一行中使用多条语句，语句之间使用分号;分割，以下是一个简单的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"></div><div class="line">import sys; x = &apos;runoob&apos;; sys.stdout.write(x + &apos;\n&apos;)</div></pre></td></tr></table></figure></p>
-<p>执行以上代码，输入结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ python test.py</div><div class="line">runoob</div></pre></td></tr></table></figure></p>
-<p>##1.11多个语句构成代码组<br>缩进相同的一组语句构成一个代码块，我们称之代码组。<br>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。<br>我们将首行及后面的代码组称为一个子句(clause)。<br>如下实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if expression : </div><div class="line">   suite </div><div class="line">elif expression :  </div><div class="line">   suite  </div><div class="line">else :  </div><div class="line">   suite</div></pre></td></tr></table></figure></p>
-<p>##1.12命令行参数<br>很多程序可以执行一些操作来查看一些基本信，Python可以使用-h参数查看各参数帮助信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ python -h </div><div class="line">usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ... </div><div class="line">Options and arguments (and corresponding environment variables): </div><div class="line">-c cmd : program passed in as string (terminates option list) </div><div class="line">-d     : debug output from parser (also PYTHONDEBUG=x) </div><div class="line">-E     : ignore environment variables (such as PYTHONPATH) </div><div class="line">-h     : print this help message and exit </div><div class="line"> </div><div class="line">[ etc. ]</div></pre></td></tr></table></figure></p>
-<p>我们在使用脚本形式执行 Python 时，可以接收命令行输入的参数，具体使用可以参照 Python 命令行参数。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/08/25/jsm基础/" itemprop="url">
                   jsm
                 </a>
@@ -571,312 +320,12 @@
         
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jspm -g</div></pre></td></tr></table></figure>
-<p>mkdir 项目文件夹<br>cd 项目文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jspm —save-dev</div></pre></td></tr></table></figure>
+<p>mkdir &#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<br>cd &#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jspm &#x2014;save-dev</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm init</div></pre></td></tr></table></figure>
-<p>jspm 可以安装来自不同地方的包，比如 npm，github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm install jquery=github:components/jquery</div></pre></td></tr></table></figure></p>
+<p>jspm &#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x5730;&#x65B9;&#x7684;&#x5305;&#xFF0C;&#x6BD4;&#x5982; npm&#xFF0C;github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm install jquery=github:components/jquery</div></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/jspm/registry/blob/master/registry.json" target="_blank" rel="external">https://github.com/jspm/registry/blob/master/registry.json</a></p>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/25/babel基础/" itemprop="url">
-                  babel基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-25T17:33:06+08:00" content="2016-08-25">
-              2016-08-25
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/25/babel基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/babel基础/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/php基础/" itemprop="url">
-                  PHP基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T17:54:28+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/php基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/php基础/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/服务器搭建/" itemprop="url">
-                  服务器搭建
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T17:54:28+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/服务器搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/服务器搭建/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -976,22 +425,142 @@
       
         
           
-            <p>升级<br>sudo npm install npm –global</p>
-<p>安装<br>例如forever ,全局范围<br>nam install forever -g</p>
-<p>删除<br>全局范围，例如forever<br> nam uninstall forever —global</p>
-<p>本地项目<br>例如underscore<br>不需要-g 或者—global</p>
-<p>tree工具安装查看结构</p>
-<p>查看列表<br>npm list<br>或者 nam ls</p>
-<p>npm info 包名<br>npm install 包名@版本号</p>
-<p>cat  文件</p>
-<p>使用package.json，dependencies含有包：<br> npm install 包名 —save</p>
-<p>开发依赖：<br>npm install 包名  —save-dev<br>开发依赖删除<br>npm uninstall 包名—save-dev</p>
-<p>删除<br>rm -rf node_modules</p>
-<p>项目依赖包<br>npm list<br>npm install</p>
-<p>检查更新<br>npm outdated</p>
-<p>找到 package.json，<br>在它的 devDependencies 里面，可以看到有 gulp 这个包，对应的版本号的前面，加了一个 ^ 表示我们在更新这个包的时候，只能更新版本里面的第二位数字，也就是 MINOR 部分。<br>如果更新 PATCH 部分 也就是这个三位版本号里的最后一个数字 ，可以把 ^ 换成 ~ 号 ，回到命令行 ，再执行一下 npm outdated ，可以更新的版本变成了 2.0.1<br>如果想一直使用最新版本的 gulp ，可以把这个版本号换成 * 号 ，保存再执行一下 npm outdated ，现在显示可以更新到的就是这个包的最新的版本了。</p>
-<p>2.x 到 3.x 会有很大的变化，可能会让一些功能不能用了，所以安全点的做法还是使用那个 ^ 符号，使用 npm update 这个命令。</p>
-<p>nrm源<br>npm install nrm  -g<br>nrm ls<br>nrm test<br>nrm use taobao</p>
+            <p>&#x5347;&#x7EA7;<br>sudo npm install npm &#x2013;global</p>
+<p>&#x5B89;&#x88C5;<br>&#x4F8B;&#x5982;forever ,&#x5168;&#x5C40;&#x8303;&#x56F4;<br>nam install forever -g</p>
+<p>&#x5220;&#x9664;<br>&#x5168;&#x5C40;&#x8303;&#x56F4;&#xFF0C;&#x4F8B;&#x5982;forever<br> nam uninstall forever &#x2014;global</p>
+<p>&#x672C;&#x5730;&#x9879;&#x76EE;<br>&#x4F8B;&#x5982;underscore<br>&#x4E0D;&#x9700;&#x8981;-g &#x6216;&#x8005;&#x2014;global</p>
+<p>tree&#x5DE5;&#x5177;&#x5B89;&#x88C5;&#x67E5;&#x770B;&#x7ED3;&#x6784;</p>
+<p>&#x67E5;&#x770B;&#x5217;&#x8868;<br>npm list<br>&#x6216;&#x8005; nam ls</p>
+<p>npm info &#x5305;&#x540D;<br>npm install &#x5305;&#x540D;@&#x7248;&#x672C;&#x53F7;</p>
+<p>cat  &#x6587;&#x4EF6;</p>
+<p>&#x4F7F;&#x7528;package.json&#xFF0C;dependencies&#x542B;&#x6709;&#x5305;&#xFF1A;<br> npm install &#x5305;&#x540D; &#x2014;save</p>
+<p>&#x5F00;&#x53D1;&#x4F9D;&#x8D56;&#xFF1A;<br>npm install &#x5305;&#x540D;  &#x2014;save-dev<br>&#x5F00;&#x53D1;&#x4F9D;&#x8D56;&#x5220;&#x9664;<br>npm uninstall &#x5305;&#x540D;&#x2014;save-dev</p>
+<p>&#x5220;&#x9664;<br>rm -rf node_modules</p>
+<p>&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x5305;<br>npm list<br>npm install</p>
+<p>&#x68C0;&#x67E5;&#x66F4;&#x65B0;<br>npm outdated</p>
+<p>&#x627E;&#x5230; package.json&#xFF0C;<br>&#x5728;&#x5B83;&#x7684; devDependencies &#x91CC;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6709; gulp &#x8FD9;&#x4E2A;&#x5305;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#x53F7;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x52A0;&#x4E86;&#x4E00;&#x4E2A; ^ &#x8868;&#x793A;&#x6211;&#x4EEC;&#x5728;&#x66F4;&#x65B0;&#x8FD9;&#x4E2A;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x80FD;&#x66F4;&#x65B0;&#x7248;&#x672C;&#x91CC;&#x9762;&#x7684;&#x7B2C;&#x4E8C;&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; MINOR &#x90E8;&#x5206;&#x3002;<br>&#x5982;&#x679C;&#x66F4;&#x65B0; PATCH &#x90E8;&#x5206; &#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x4E09;&#x4F4D;&#x7248;&#x672C;&#x53F7;&#x91CC;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x5B57; &#xFF0C;&#x53EF;&#x4EE5;&#x628A; ^ &#x6362;&#x6210; ~ &#x53F7; &#xFF0C;&#x56DE;&#x5230;&#x547D;&#x4EE4;&#x884C; &#xFF0C;&#x518D;&#x6267;&#x884C;&#x4E00;&#x4E0B; npm outdated &#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x7684;&#x7248;&#x672C;&#x53D8;&#x6210;&#x4E86; 2.0.1<br>&#x5982;&#x679C;&#x60F3;&#x4E00;&#x76F4;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; gulp &#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x53F7;&#x6362;&#x6210; * &#x53F7; &#xFF0C;&#x4FDD;&#x5B58;&#x518D;&#x6267;&#x884C;&#x4E00;&#x4E0B; npm outdated &#xFF0C;&#x73B0;&#x5728;&#x663E;&#x793A;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x5230;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x5305;&#x7684;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x4E86;&#x3002;</p>
+<p>2.x &#x5230; 3.x &#x4F1A;&#x6709;&#x5F88;&#x5927;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x8BA9;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#x4E0D;&#x80FD;&#x7528;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5B89;&#x5168;&#x70B9;&#x7684;&#x505A;&#x6CD5;&#x8FD8;&#x662F;&#x4F7F;&#x7528;&#x90A3;&#x4E2A; ^ &#x7B26;&#x53F7;&#xFF0C;&#x4F7F;&#x7528; npm update &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x3002;</p>
+<p>nrm&#x6E90;<br>npm install nrm  -g<br>nrm ls<br>nrm test<br>nrm use taobao</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/27/作品－H5/" itemprop="url">
+                  H5作品
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-27T17:10:20+08:00" content="2016-07-27">
+              2016-07-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/H5/" itemprop="url" rel="index">
+                    <span itemprop="name">H5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/27/作品－H5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/作品－H5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&lt;img src=&#x201D;../images/works_code/rh_bb.png&#x201D;</p>
 
           
         
@@ -1230,7 +799,10 @@
       
         
           
-            
+            <p><img alt="&#x745E;&#x548C;&#x6708;&#x5B50;&#x4F1A;&#x6240;PC" src="http://ohg44ldjh.bkt.clouddn.com/rh_pc.png"></p>
+<p><img alt="&#x745E;&#x548C;&#x6708;&#x5B50;&#x4F1A;&#x6240;M&#x7AEF;" src="http://ohg44ldjh.bkt.clouddn.com/rh_mobile.png"></p>
+<p><img alt="&#x6D01;&#x67D4;&#x5B98;&#x65B9;&#x5546;&#x57CE;" src="http://ohg44ldjh.bkt.clouddn.com/cs_pc.png"></p>
+
           
         
       
@@ -1377,13 +949,110 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/27/H5动画实现总结/" itemprop="url">
+                  H5动画实现总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-27T10:26:20+08:00" content="2016-07-27">
+              2016-07-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/27/H5动画实现总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/H5动画实现总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&#xFF03;&#x5B9E;&#x73B0;H5&#x52A8;&#x753B;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;<br>1.&#x5229;&#x7528;GIF&#x52A8;&#x753B;<br>2.CSS3&#x52A8;&#x753B;&#xFF0C;&#x5305;&#x62EC;CSS3&#x7CBE;&#x7075;&#x56FE;&#xFF0C;CSS3&#x52A8;&#x753B;&#x7B49;<br>3.Canvas</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1422,7 +1091,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1487,7 +1156,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
